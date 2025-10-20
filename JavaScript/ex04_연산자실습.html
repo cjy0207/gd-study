@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        text-align: right;
+      }
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      시간당 임금을 입려받고, 8시간까지는 최저시급 초과시 기본시급의 1.5배를
+      받는다고 할 때, 근무한 만큼의 일당을 촐력하시오
+    </p>
+    <hr />
+    <table><caption>임금계산하기</caption>
+      <tr>
+        <th>시간당 임금</th>
+        <td><input type="text" id="payPerHour" value="9620" /></td>
+      </tr>
+      <tr>
+        <th>근무시간</th>
+        <td><input type="text" id="workTime" value="10" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right">
+          <button type="button" onclick="calc()">총급여 계산</button>
+        </td>
+      </tr>
+      <tr>
+        <th>총임금</th>
+        <td>
+          <input type="text" id="totalPay" />
+        </td>
+      </tr>
+    </table>
+    <script>
+        function calc(){
+        let payPerHour = document.getElementById("payPerHour").value
+        let workTime = document.getElementById("workTime").value
+        let totalPay = (payPerHour*workTime) + ((workTime>8)? (payPerHour*0.5*(workTime-8)):0)
+        document.getElementById("totalPay").value = totalPay
+        }
+    </script>
+  </body>
+</html>
