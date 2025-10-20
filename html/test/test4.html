@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4</title>
+    <style>
+        .align {
+            text-align: center;
+            padding: 2px 0px;
+        }
+        .input-button{
+            width: 35%;
+            text-align: center;
+        }
+        .a{
+            padding-right: 50px;
+        }
+        .go{
+            background-color: rgb(214, 214, 214);
+        }
+    </style>
+</head>
+<body>
+    <h1>공지사항 작성하기 폼과 공지사항 목록 테이블을 작성하시오</h1>
+    <fieldset>
+        <legend>공지사항 작성하기</legend>
+        <table>
+            <tr>
+                <th class="align">제목</th>
+                <td><input type="text" placeholder="제목을 입력하시오"></td>
+            </tr>
+            <tr>
+                <th class="align">내용</th>
+                <td><input type="text" placeholder="내용을 입력하시오" height="100x"></td>
+            </tr>
+            <tr>
+                <th class="align">첨부파일</th>
+                <td><input type="file"></td>
+            </tr>
+            
+        </table>
+        <br>
+        <div class="input-button">
+            <input type="button" value="작성하기" >
+        </div>
+    </fieldset>
+    <br><br>
+    <table border="1" style="width: 80%;">
+        <tr>
+            <th>번호</th><th colspan="2">제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td class="a">공지사항 제목 9</td>
+            <td class="go">바로가기</td>
+            <td>user</td>
+            <td>20xx-xx-xx</td>
+            <td>xx</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>공지사항 제목 6</td>
+            <td class="go">바로가기</td>
+            <td>user</td>
+            <td>20xx-xx-xx</td>
+            <td>xx</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>공지사항 제목 3</td>
+            <td class="go">바로가기</td>
+            <td>user</td>
+            <td>20xx-xx-xx</td>
+            <td>xx</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>공지사항 제목 2</td>
+            <td class="go">바로가기</td>
+            <td>user</td>
+            <td>20xx-xx-xx</td>
+            <td>xx</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>공지사항 제목 1</td>
+            <td class="go">바로가기</td>
+            <td>user</td>
+            <td>20xx-xx-xx</td>
+            <td>xx</td>
+        </tr>
+        <tr>
+            <th colspan="4">전체공지사항 갯수</th>
+            <th colspan="2">5개</th>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 관련 태그</title>
+</head>
+<body>
+    <!--
+        table : 표를 만드는 태그
+        테이블의 구역을 구분 : thead, tbody, tfoot => 생략 가능 but 생략해도 tbody는 사용됨
+        행(row) : tr
+        열(column) : td
+        th : header cloumn => 글자를 굵게, 가운데 정렬
+    -->
+    <table border="1">
+        <thead>
+            <tr><td>c</td><td>c</td><td>s</td></tr>
+        </thead>
+        <tbody>
+            <tr><td>c</td><td>c</td><td>s</td></tr>
+            <tr><td>c</td><td>c</td><td>s</td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td>c</td><td>c</td><td>s</td></tr>
+        </tfoot>
+    </table>
+
+    <!--생략 but tbody 추가됨, th사용-->
+     <table border="1">
+            <tr><th>c</th><th>c</th><th>s</th></tr>
+
+            <tr><td>c가나다라마사</td><td>c</td><td>s</td></tr>
+            <tr><td>c</td><td>c</td><td>s</td></tr>
+            
+            <tr><td>c</td><td>c</td><td>s</td></tr>
+    </table>
+    <hr>
+    <!--셀 병합
+        colspan : column 열병합
+        rowspan : 행병합
+    -->
+    <table border="1">
+        <tr><td>1열</td><td>2열</td><td>3열</td></tr>
+        <tr><td>1열</td><td colspan="2">2,3열</td></tr>
+        <tr><td colspan="3">1,2,3열</td></tr>
+    </table>
+</body>
+</html>

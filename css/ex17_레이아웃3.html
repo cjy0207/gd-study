@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap1{
+            overflow: hidden;
+        }
+        .wrap1 > div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+        }
+        .wrap2{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column; /*row:행배치     column:열배치*/
+            justify-content: space-around;
+            width: 600px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap1">
+        <div>BOX1</div>
+        <div>BOX2</div>
+    </div>    
+    <div class="wrap2">
+        <div>BOX1</div>
+        <div>BOX2</div>
+        <div>BOX3</div>
+        <div>BOX4</div>
+        <div>BOX5</div>
+    </div>
+</body>
+</html>

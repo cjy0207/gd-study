@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font</title>
+    <style>
+        p{
+            font-family: '맑은 고딕', sans-serif;
+            font-family: '궁서', serif;/*궁서체가 없으면 명조게의 serif 이용*/
+            font-size: 32px;/*rlqhs 16px*/
+            font-weight: 900;/*기본 400*/
+            font-style: italic;
+            text-align: center;/*블록 레벨캐그 안에서만 적용*/
+            text-decoration: underline;/*line-through : 취소산*/
+            text-shadow: 5px 5px 5px rgb(192, 192, 192);
+
+        }
+        pre{
+            line-height: 20px;
+            letter-spacing: 5px/*글자 간격*/;
+            color: rgba(98, 109, 255, 0.5);
+        }
+        /*a태그 가운데 정렬*/
+        a {
+            /*inline level태그에서는 가운데 정렬이 안됨*/
+        }
+        h1{
+            /*
+            브라우저 별로 글자 외곽선 효과 : 아직 표준화 전
+            벤더프리픽스 : 속성앞에 브라우저 지정
+                -webkit : 크롬, 사파리
+                -moz : 파이어폭스
+                -o : 오페라
+            */
+            -webkit-text-stroke-color: crimson; 
+            -webkit-text-stroke-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello World</p>
+    <pre>Nice to meet you</pre>
+    <pre>good</pre>
+    <h1>i'm fine</h1>
+    <div style="text-align: center;">
+        <a>Contact</a>
+    </div>
+   
+</body>
+</html>

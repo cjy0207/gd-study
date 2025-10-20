@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ff1{font-family: 궁서체;}
+        #ff2{font-family: 고딕체;}
+        #ff3{font-family: '구디체', '궁서체';}
+        #ff4{
+            font-size: 30px;
+            font-family: 'stylish','sefif';
+        }
+        #fs1{font-size: 30px;}
+        #fs2{font-size: 2em;}
+        #fs3{
+            font-size: 200%;
+            font-weight: bold;
+            text-shadow: 0px -5px 4px yellow;
+        }
+        #c{
+            color: red;
+            color: #ffff00; /*16진수*/
+            color: rgb(70, 171, 42);
+
+            color: hsl(200, 50%, 50%);
+
+        }
+    </style>
+</head>
+<body>
+    <h1>글꼴 관련 스타일</h1>
+    <h3>font-family : 글꼴 지정시 사용</h3>
+    <p1 id="ff1">test1 글씨체 테스트</p1><br>
+    <p2 id="ff2">test1 글씨체 테스트</p2><br>
+    <p3 id="ff3">test1 글씨체 테스트</p3><br>
+    <p3 id="ff4">test1 글씨체 테스트</p3><br>
+
+    <pre>font-size 글꼴 크기 px/em/%</pre>
+    <ul style="font-size: 30px;">
+        <li id="fs1">글꼴 크기 테스트</li>
+        <li id="fs2">글꼴 크기 테스트</li>
+        <li id="fs3">글꼴 크기 테스트</li>
+    </ul>
+
+    <h3>color: 텍스트의 색상을 지정</h3>
+    <pre id="c">
+    선택자{
+        color: 색상명|16진수|rgb(x,x,x)|rgba(x,x,x,x)|hsl(x,x,x)|hsla(x,x,x,x);
+    }
+    </pre> 
+
+
+</body>
+</html>

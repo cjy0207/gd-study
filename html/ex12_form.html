@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼관련 태그</title>
+</head>
+<body>
+    <form>
+    <h1>input type="text" 태그</h1>
+    <input> <!--type기본 속성이 text임-->
+    <br>
+    <input type="text" size="5"><!--입력 상자의 사이즈 변경-->
+    <br>
+    <input type="text" size="5" maxlength="4"><!--입력값의 크기 지정-->
+    <br>
+    <input type="text" placeholder="검색어를 입력하시오"><!--초기 입력 메시지-->
+    <br>
+    <input type="text" required> <!--필수 입력-->
+    <br>
+    <input type="text" value="날짜"> <!--초기 입력값 설정-->
+    <br>
+    <input type="text" value="날짜" readonly> <!--입력값 변경 불가-->
+    <br>
+    <input type="text" value="날짜" disabled> <!--입력값 비활성화-->
+
+    <h1>input태그의 type</h1>
+    <h3>password</h3>
+    <input type="password" placeholder="비밀번호"><br>
+    <h3>number</h3>
+    <input type="number" placeholder="number" min="1" max="12"><br>
+    <h3>email</h3>
+    <input type="email" placeholder="email"><br>
+    <h3>date</h3>
+    <input type="date" placeholder="date" ><br>
+    <h3>color</h3>
+    <input type="color" placeholder="color"><br>
+    <h3>hiden</h3>
+    <input type="hidden" value="값이 보이지 않음"><br>
+    <h3>file</h3>
+    <input type="file"><br>
+    <h3>button</h3>
+    <input type="button" value="button"><br>
+    <h3>submit : form태그에 설정된 입력값을 가지고 action속성의 값으로 페이지 전송</h3>
+    <input type="submit"><br>
+    <h3>reset : form태그의 입력값을 초기화</h3>
+    <input type="reset" value="입력취소"><br>
+    <h3>radio : 단일 선택 : name속성의 값으로 단일 여부 선택</h3>
+    <input type="radio" value="male" name="gender">male<br>
+    <input type="radio" value="female" name="gender">female<br>
+    <input type="radio" value="1" name="pass">success
+    <input type="radio" value="0" name="pass">fail<br>
+    <h3>checkbox : 다중 선택 : </h3>
+    <input type="checkbox" name="hobbies" value="축구">축구<br>
+    <input type="checkbox" name="hobbies" value="농구">농구<br>
+    <input type="checkbox" name="hobbies" value="야구">야구<br>
+    <input type="checkbox" name="hobbies" value="하키">하키<br>
+    </form>
+</body>
+</html>

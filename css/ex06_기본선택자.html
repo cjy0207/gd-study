@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: blue;
+        }
+        h3{
+            background-color: yellow;
+        }
+
+        /*id=idTest1 인 태그의 글자 스타일 변경*/
+        #idTest1{
+            color: red;
+            background-color: green;
+        }
+        .clTest1{
+            background-color: aqua;
+        }
+        p,pre{
+            color: tomato;
+        }
+        p.clTest1{
+            text-shadow: 3px 3px 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>선택자란?</h3>
+    <p>특정 html요소를 선택할때 사용하는 기능</p>
+    <h3>1. 모든 선택자 : *</h3>
+
+    <h3>2. tag 선택자 : 태그명</h3>
+
+    <h3>3. id 선택자 : #아이디명</h3>
+    <p>현재 문서의 특정 html요소 중 한개만 선택하고자 할 때 사용. 단, id속성은 고유한 아이디 값을 부여해야함</p>
+
+    <ol>
+        <li>아이디 선택자 테스트</li>
+        <li id="idTest1">아이디 선택자</li>
+        <li>아이디 선택자</li>
+        <li>아이디 선택자</li>
+    </ol>
+
+    <h3>4. 클래스 선택자 : .클래스명</h3>
+    <p class="clTest1">해당 문서내에 원하는 요소 여러개를 함께 선택하고자 할 떄 사용</p>
+    <ol>
+        <li>아이디 선택자 테스트</li>
+        <li class="clTest1">아이디 선택자</li>
+        <li>아이디 선택자</li>
+        <li>아이디 선택자</li>
+    </ol>
+</body>
+</html>

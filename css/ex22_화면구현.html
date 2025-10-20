@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./ex22_display.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="header">
+        <div class="header-top">
+          <div class="header-logo">
+            <img src="../html/images/icon.png" alt="logo" />
+          </div>
+          <div class="header-search">
+            <form action="search.do" class="search-form">
+              <input type="search" name="keyword" />
+              <button type="submit">검색</button>
+            </form>
+          </div>
+          <div class="header-alarm"></div>
+        </div>
+        <nav class="header-nav">
+          <div class="menu-wrap">
+            <div class="main-menu"><a href="">java</a></div>
+            <div class="main-menu"><a href="">Oracle</a></div>
+            <div class="main-menu">
+              <a href="">Front-end</a>
+              <div class="sub-wrap">
+                <div class="sub-menu"><a href="">HTML</a></div>
+                <div class="sub-menu"><a href="">CSS</a></div>
+                <div class="sub-menu"><a href="">JavaScript</a></div>
+                <div class="sub-menu"><a href="">JQuery</a></div>
+              </div>
+            </div>
+            <div class="main-menu">
+              <a href="">Server</a>
+              <div class="sub-wrap">
+                <div class="sub-menu"><a href="">JDBC</a></div>
+                <div class="sub-menu"><a href="">Servlet</a></div>
+                <div class="sub-menu"><a href="">JSP</a></div>
+                <div class="sub-menu"><a href="">AJax</a></div>
+              </div>
+            </div>
+            <div class="main-menu">
+              <a href="">Framework</a>
+              <div class="sub-wrap">
+                <div class="sub-menu"><a href="">MyBatis</a></div>
+                <div class="sub-menu"><a href="">Spring</a></div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="content-wrap">
+        <div class="content-news"></div>
+        <div class="content-side">
+          <div class="content-side-myinfo">
+            <form action="login.me" class="login-form">
+              <div class="login-input-wrap">
+                <input type="text" name="userId" placeholder="Id" required />
+                <input
+                  type="password"
+                  name="userPwd"
+                  placeholder="password"
+                  required
+                />
+              </div>
+              <div class="login-btn">
+                <button type="submit">login</button>
+              </div>
+            </form>
+            <div class="login-etc">
+              <a href="">sign in</a> | <a href="">ID/PWD</a>
+            </div>
+          </div>
+          <div class="content-side-ad"></div>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div class="footer-link">
+          <a href="">이용약관</a> | <a href="">개인정보취급방침</a> |
+          <a href="">인재채용</a> |
+          <a href="">고객센터</a>
+        </div>
+
+        <div class="footer-info">
+          <ul class="footer-info-company">
+            <li>상호명 : GooDee Academy</li>
+            <li>전화 : 02-818-7950</li>
+            <li>팩스 : 02-818-7950</li>
+            <li>
+              본관 : (08505) 서울특별시 금천구 가산디지털2로 95 (가산동, km타워)
+              2층, 3층
+            </li>
+          </ul>
+          <div class="footer-info-copyright">
+            Copyright ⓒ GooDee Academy. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
