@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>국어점수<span id="kor">100</span>점</div>
+    <div>영어점수<span id="eng">60</span>점</div>
+    <div>수학점수<span id="math">43</span>점</div>
+
+    <div>
+      <div>평균점수<span id="avg"></span>점</div>
+      <div>학점<span id="grade"></span>학점</div>
+      <div id="pass"></div>
+    </div>
+
+    <script>
+      let kor = document.querySelector("#kor").textContent;
+      let eng = document.querySelector("#eng").textContent;
+      let math = document.querySelector("#math").textContent;
+      let avg = Math.floor((Number(kor) + Number(eng) + Number(math)) / 3);
+      document.querySelector("#avg").textContent = avg;
+
+      let grade;
+      switch(true){
+        case avg>=90: grade="A"
+        break;
+        case avg>=80: grade="B"
+        break;
+        case avg>=70: grade="C"
+        break;
+        case avg>=60: grade="D"
+        break;
+        default: grade="F"
+      }
+      document.querySelector("#grade").textContent = grade;
+    </script>
+  </body>
+</html>

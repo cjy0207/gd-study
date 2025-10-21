@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문(for, while, do-while)</title>
+  </head>
+  <body>
+    <script>
+      /*
+        반복문 : 조건문의 결과가 참인 동안 반복
+        1. for 
+            
+        2. while
+        3. do-while
+    */
+    </script>
+    <h3>반복문 연습</h3>
+    for : <div id="box1"></div>
+    while : <div id="box2"></div>
+    do-while : <div id="box3"></div>
+    <script>
+        let n =0;
+        for(n=1; n<=5; n++){
+            document.querySelector("#box1").innerHTML +=(n+"&nbsp;&nbsp;")
+        }
+        console.log("n=",n)
+        n=1
+        while(n<=5){
+            document.querySelector("#box2").innerHTML += (n+"&nbsp;&nbsp;")
+            n++
+        }
+        n=1;
+        do{
+            document.querySelector("#box3").innerHTML += (n+"&nbsp;&nbsp;")
+            n++
+        }while(n<=5)
+    </script>
+  </body>
+</html>
