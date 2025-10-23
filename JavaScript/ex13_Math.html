@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            width: 500px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+        .big{height: 500px;}
+        .small{height: 250px;}
+    </style>
+</head>
+<body>
+    <h3>Math : 숫자,수학 관련 내장 객체/ 메소드</h3>
+    <button onclick="mathTest()">수학관련메소드</button>
+    <div id="area1" class="area small"></div>
+    <script>
+        function mathTest(){
+            const divEL = document.getElementById("area1")
+            divEL.innerHTML = `절댓값 : ${Math.abs(-123)}<br>`
+            divEL.innerHTML += `임의올림 : ${Math.random()}<br>`
+            // 0 < Math.random() < 1.0 임의의 값
+            divEL.innerHTML += `반올림 : ${Math.round(123.567)}<br>`
+            divEL.innerHTML += `반올림위치 : ${Math.round(123.567, 2)}<br>`
+            divEL.innerHTML += `버림 : ${Math.floor(123.567)}<br>`
+            divEL.innerHTML += `올림 : ${Math.ceil(123.567)}<br>`
+            
+            //삼각함수 : 라디안 단위
+            divEL.innerHTML += `원주율 : ${Math.PI}<br>`
+            divEL.innerHTML += `sin : ${Math.sin(Math.PI/2)}<br>`
+            divEL.innerHTML += `cos : ${Math.cos(Math.PI/2)}<br>`
+            divEL.innerHTML += `tan : ${Math.tan(Math.PI/4)}<br>`
+        }
+    </script>
+    <hr>
+    <h3>문자열과 숫자간의 산술연산</h3>
+    <button onclick="arithmetic()">산술연산</button>
+    <div id="area2" class="area small"></div>
+    <script>
+        function arithmetic(){
+            const divEL = document.getElementById("area2")
+            divEL.innerHTML += `test1 : ${7+7}<br>`
+            divEL.innerHTML += `test2 : ${7+"7"}<br>`
+            divEL.innerHTML += `test3 : ${"7"+7}<br>`
+            divEL.innerHTML += `test4 : ${"7"+"7"}<br>`
+            divEL.innerHTML += `test5 : ${"7"+7+7}<br>`
+            //문자열 덧셈 이외의 산술연산 가능 -> 문자열이 숫자로 자동형변환
+            divEL.innerHTML += `test6 : ${"7"-7}<br>`
+            divEL.innerHTML += `test7 : ${"7"/7}<br>`
+            divEL.innerHTML += `test8 : ${"7"*7}<br>`
+
+            divEL.innerHTML += `test9 : ${7+7+Number("7")}<br>`
+            divEL.innerHTML += `test10 : ${7+7+parseInt("7")}<br>`
+            divEL.innerHTML += `test11 : ${7+7+parseFloat("7")}<br>`
+            divEL.innerHTML += `test12 : ${7+Number("1.234원")}<br>`
+            divEL.innerHTML += `test13 : ${7+7+parseInt("1.234원")}<br>`
+            divEL.innerHTML += `test14 : ${7+7+parseFloat("1.234원")}<br>`
+
+            let str = "100 +20 *3 "
+            divEL.innerHTML += `test15 : ${eval(str)}<br>`
+        }
+    </script>
+</body>
+</html>

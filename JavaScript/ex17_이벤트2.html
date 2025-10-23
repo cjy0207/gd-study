@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h2>key 이벤트</h2>
+    <p>
+      -key down : 키를 누를 때. 모든키에서 이벤트 발생<br />
+      -key press : 키가 눌려있는 상태. 펑션키, 기능키등에서 이벤트가 발생하지
+      않음<br />
+      -keyup : 키가 올라올 때. 모든키에서 이벤트 발생<br />
+    </p>
+    <input type="text" id="userName" />
+    <script>
+      document.getElementById("userName").onkeyup = function (e) {
+        console.log(e); // 키 이벤트
+        console.log(this.value); //input 태그의 value값
+        console.log(e.key); // 눌린 키값
+        console.log(e.keyCode); //
+      };
+    </script>
+    <hr />
+    <h2>태그별로 기본적인 이벤트 제거</h2>
+    <p>
+      -a 테그 : 클릭 시 href속성에 작성된 url로 페이지가 이동하는 기본 이벤트가
+      존재<br />
+      -form 태그에 submit : submit버튼 클릭시 form태그에 action이라는 속성에
+      설정된 url로 입력값들과 함께 요청되는 기본 이벤트가 존재<br />
+      -기본이벤트의 실행을 막을 때에는 return false를 이용<br />
+    </p>
+    <a
+      href="https://www.naver.com"
+      onclick="alert('네이버 연결못함'); return false"
+      >go to naver</a
+    ><br />
+    <a
+      href="https://www.google.com"
+      onclick="return confirm('구글 페이지로 이동하시겠습니까?')"
+      >go to google</a
+    >
+
+    <br /><br />
+    <hr />
+    <form action="ex16_이벤트실습.html" method="get">
+      id : <input type="text" id="userId" name="userId" required /><br />
+      password :
+      <input type="password" id="usePwd" name="usePwd" required /><br />
+      <input type="submit" value="전송" onclick="return validate()" />
+    </form>
+    <script>
+      function validate() {
+        //id의 유효성 검사 : 영문자/숫자로만 5글자 이상 12글자 이하가능
+        //형식에 맞지 않는 경우 -> 알림창 출력, 기본 이벤트 막기
+        //형식에 맞는 경우 -> 기본 이벤트 실행. 페이지 이동
+        const userId = document.getElementById("userId").value;
+
+        // if (!(userId.length >= 5 && userId.length <= 12)) {
+        //   alert("아이디는 영문자/숫자로만 5~12글자여야 합니다.");
+        //   return false;
+        // }
+
+        // for (let i = 0; i < userId.length; i++) {
+        //   const ch = userId.charAt(i);
+        //   const isDigit = ch >= "0" && ch <= "9";
+        //   const isLower = ch >= "a" && ch <= "z";
+        //   const isUpper = ch >= "A" && ch <= "Z";
+
+        //   if (!(isDigit || isLower || isUpper)) {
+        //     alert("아이디는 영문자/숫자로만 5~12글자여야 합니다.");
+        //     return false;
+        //   }
+        // }
+
+        // return true; 
+
+        //정규식 : 숫자나 문자등을 판단할 수 있는 기능
+        const regExp = /^[a-zA-Z0-9]{5,12}$/i;
+        if(!regExp.test(userId)){
+          alert("유효한 아이디 형식이 아님")
+          document.getElementById("userId").select()
+          return false
+        }
+      }
+    </script>
+  </body>
+</html>

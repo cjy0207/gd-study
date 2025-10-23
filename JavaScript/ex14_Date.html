@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="area"></div>
+    <script>
+        let box1 = document.querySelector("#box1")
+        let now = new Date()
+        //new Date : 년, 월(0-11), 일, 시, 분, 초
+        box1.innerHTML += now +"<br>"
+        let date1 = new Date(2035,(10-1),22,15,20,0) // 2015-10-22 15:20
+        box1.innerHTML += date1 + "<br>"
+        let date2 = new Date(2035,(10-1),22) // 2015-10-22
+        box1.innerHTML += date2 + "<br>"
+        let date3 = new Date("2025-10-22 15:30:00") // 2015-10-22 15:20
+        box1.innerHTML += date3 + "<br>"
+
+        let year = now.getFullYear();
+        let month = now.getMonth();
+        let day = now.getDate();
+        let weekNo = now.getDay();
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let second = now.getSeconds();
+        box1.innerHTML += `${year}-${month}-${day}-${weekNo} &nbsp; ${hour}:${minute}:${second}<br>`
+
+        //UTC기준 시간
+        year = now.getUTCFullYear();
+        month = now.getUTCMonth();
+        day = now.getUTCDate();
+        weekNo = now.getUTCDay();
+        hour = now.getUTCHours();
+        minute = now.getUTCMinutes();
+        second = now.getUTCSeconds();
+        box1.innerHTML += `${year}-${month}-${day}-${weekNo} &nbsp; ${hour}:${minute}:${second}<br>`
+
+        //오늘은 수요일입니다
+        let week = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+        let weekname = week[now.getDay()]
+        box1.innerHTML += `2025-10-22 ${weekname}요일입니다`
+    </script>
+</body>
+</html>

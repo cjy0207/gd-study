@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>select태그를 선택해서 value의 값의 이미지로 변경하기</p>
+    <form name="f">
+      <table>
+        <tr>
+          <td>
+            <select name="s" onchange="drawing()">
+              <option value="strawberry.gif">딸기</option>
+              <option value="banana.jpg">바나나</option>
+              <option value="apple.gif">사과</option>
+            </select>
+          </td>
+          <td><img name="img2" src="img/strawberry.gif" width="100" /></td>
+        </tr>
+      </table>
+    </form>
+    <script>
+        function drawing(){
+            //img[name=img2] : img태그중 name속성의 값이 img2인 태그
+            // let img = document.querySelector("img[name=img2]")
+            // let sel = document.querySelector("select[name=s]")
+            // img.src = "img/" + sel.value
+
+            const imgName = document.f.s.value
+            document.f.img2.src = "img/"+imgName;
+
+            // let lmg = document.getElementsByTagName("img")[0]
+            // let sel = document.getElementsByTagName("select")[0]
+            // img.src = "img/" + sel.value
+        }
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--  webapp/20230324/exam1.html -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>달력 출력하기</title>
+    <style type="text/css">
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 3px solid #bcbcbc;
+        text-align: center;
+        padding: 8px;
+      }
+      th {
+        background-color: #e2e2e2;
+        color: #111111;
+      }
+      td {
+        background-color: #f2f2f2;
+      }
+      caption {
+        color: #111111;
+        font-size: 20px;
+        background-color: #ffffff;
+      }
+      .text-red {
+        color: red;
+      }
+      .text-blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="y">
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+    </select>
+    <select id="m">
+      <option value="1">1월</option>
+      <option value="2">2월</option>
+      <option value="3">3월</option>
+      <option value="4">4월</option>
+      <option value="5">5월</option>
+      <option value="6">6월</option>
+      <option value="7">7월</option>
+      <option value="8">8월</option>
+      <option value="9">9월</option>
+      <option value="10">10월</option>
+      <option value="11">11월</option>
+      <option value="12">12월</option>
+    </select>
+    <input type="button" value="달력보기" onclick="show_cal()" /><br />
+    <span id="cal"></span>
+
+    <script>
+        function show_cal() {
+        const y = document.getElementById("y").value;
+        const m = document.getElementById("m").value;
+        let week = ["일", "월", "화", "수", "목", "금", "토"];
+
+        let firstDay = new Date(y, m - 1, 1).getDay();
+        let lastDate = new Date(y, m, 0).getDate();
+        console.log(firstDay, lastDate);
+
+        let cal = "<table><caption>" + y + "년" + m + "월</caption><tr>";
+
+        for (let i = 0; i < week.length; i++) {
+          cal += "<th>" + week[i] + "</th>";
+        }
+        cal += "</tr><tr>";
+
+        for (let i = 0; i < firstDay; i++) {
+          cal += "<td>&nbsp;</td>";
+        }
+
+        for (let d = 1; d <= lastDate; d++) {
+          let weekend;
+          if (firstDay == 0) weekend = "red";
+          if (firstDay == 6) weekend = "blue";
+          cal += `<td style="color:${weekend}">${d}</td>`;
+          firstDay++;
+
+          if (firstDay > 6 && d !== lastDate) {
+            cal += "</tr><tr>";
+            firstDay = 0;
+          }
+        }
+        
+        if (firstDay !== 0) {
+          for (let i = firstDay; i <= 6; i++) {
+            cal += "<td>&nbsp;</td>";
+          }
+        }
+        cal += "</tr></table>";
+
+        document.querySelector("#cal").innerHTML = cal;
+      }
+    </script>
+  </body>
+</html>

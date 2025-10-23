@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .area {
+        border: 1px solid black;
+        width: 500px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>선언 함수</h1>
+    <button onclick="test1()">실행 확인</button>
+    <div class="area" id="area1"></div>
+    <script>
+      /*
+            선언 함수 : 함수의 정의와 호출로 구분
+        */
+      function test1() {
+        document.getElementById("area1").innerHTML = "test1 함수호출됨<br>";
+      }
+    </script>
+    <h3>익명함수 : 이름이 없는 함수</h3>
+    <pre>
+        변수|속성 = function([매개변수,...]){
+        함수 호출시 실행할 소스 코드들;
+        }
+        특정 변수나 속성에 대입되는 함수 구현시 주로 사용됨
+        주로 이벤트 핸들러 작성시 많이 사용
+    </pre>
+    <button id="btn">실행 확인</button>
+    <div class="area" id="area2"></div>
+    <script>
+      /*
+            익명함수의 특징
+                -이벤트 처리용으로 변수에 익명함수를 지정해서 사용됨
+                -호이스팅의 대상이 아님
+                -함수정의 : 
+                    let 변수 = function([매개변수,..]){..}
+                    화살표함수(람다방식) : let 변수 = ([매개변수,..]) => {...}
+        */
+      document.getElementById("btn").onclick = function () {
+        document.getElementById("area2").innerHTML =
+          "익명의 함수로 이벤트 핸들러구현됨";
+      };
+      //화살표함수
+      document.getElementById("btn").onclick = () => {
+        document.getElementById("area2").innerHTML +=
+          "익명의 함수로 이벤트 핸들러구현됨";
+      };
+    </script>
+    <h1>함수의 매개변수</h1>
+    <div class="area" id="area3"></div>
+    <button onclick="test2('안녕하세요')">실행 확인</button>
+    <button onclick="test2('10')">실행 확인2</button>
+    <button onclick="test2([10,20,30])">실행 확인3</button>
+    <button onclick="test2('test4','test4')">실행 확인4</button>
+    <button onclick="test2()">실행 확인5</button>
+    <script>
+      function test2(value) {
+        //arguments : 매개변수 목록
+        console.log(arguments);
+        document.getElementById("area3").innerHTML = arguments[0] + "<br>";
+        document.getElementById("area3").innerHTML += arguments[1] + "<br>";
+        document.getElementById("area3").innerHTML += value + "<br>";
+      }
+    </script>
+    <h2>함수의 리턴</h2>
+    <button onclick="alert(ran())">click</button>
+    <script>
+      /*
+            반환타입 선언이 없음
+            return 키워드로 함수를 종료함. 함수의 끝(})울 실행하면 함수 종료
+            값을 반환하는 경우 return 필수 
+                -  return 값;
+                -   return 리턴이 있는 함수();
+        */
+      function ran() {
+        return parseInt(Math.random() * 100 + 1);
+      }
+    </script>
+    <script>
+      /*
+        자기 호출 함수
+            함수의 정의와 호출을 합친 상태
+            함수를 정의하고 바로 호출 가능
+            일반 익명 함수의 정의와 호풀로 가능
+            화살표 함수의 정의와 호출로도 가능
+        */
+      //일반 익명함수 정의와 호출
+      (function () {
+        console.log("Hello World");
+      })();
+      //화살표 함수 정의하고 호출
+      (() => {
+        console.log("Hello");
+      })();
+
+      //배얄로 정의하기
+      let arr = [
+        function () {
+          console.log("배열로 정의");
+        },
+        function () {
+          console.log("배열로 정의2");
+        },
+      ];
+      (arr[0])();(arr[1])();
+    </script>
+    <script>
+    /*
+    콜백함수
+        - 어떤 함수를 다른함수의 인수로 전달
+        - 인수로 전달된 함수를 콜백함수라 함
+        - 함수에서 다른함수를 호출 할 때 콜백함수라 함
+    */
+    function info(d1,d2){
+        console.log(d1,d2)
+    }
+    function func1(d1,d2,func){
+        func(d1,d2)
+    }
+    func1("안녕1", "홍길동1", info) //info= 콜백함수
+    info("안녕2", "홍길동2")//콜백함수 아님  
+    //익명함수를 이용해서 콜백함수 정의
+    func1("안녕3" , "홍길동3", function(d1,d2){
+        console.log("1: ",d1);
+        console.log("2: ",d2);
+    })
+    //화살표 함수로 콜백함수 정의
+    func1("안녕4" , "홍길동4", (d1,d2)=>{
+        console.log("1: ",d1);
+        console.log("2: ",d2);
+    })
+    </script>
+  </body>
+</html>

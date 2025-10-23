@@ -26,9 +26,9 @@
 
     <script>
       function changeColor() {
-        let color = document.querySelector("#selectColor").value;
-        console.log(color);
-        document.getElementById("div1").style.backgroundColor = color;
+        // let color = document.querySelector("#selectColor").value;
+        // document.getElementById("div1").style.backgroundColor = color;
+        document.getElementById("div1").style.backgroundColor = document.getElementById("selectColor").value
       }
     </script>
 
@@ -42,6 +42,7 @@
 
     <script>
       let size = document.getElementById("div2");
+      
       function setHalfSize() {
         size.style.width = "50px";
         size.style.height = "50px";

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const text = "Hello JavaScript"
+        const result = text.match(/Java/) // 첫번째 match만 조회
+        console.log(result)
+        //======================
+        const text2 = "abc, cat, bat, fat, mat"
+        const result2 = text2.match(/.at/g) //뒤에 g를 붙이면 문자열로 다 가져옴
+        console.log(result2)
+    </script>
+</body>
+</html>
