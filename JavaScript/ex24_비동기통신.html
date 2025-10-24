@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+            비동기 처리 방식
+                데이터를 주고 받는(송신, 수신) 과정이 순서없이 처리되는 방식
+                응답이 없어도 계속 요청이 가능함
+                페이지를 구성하는 일부 데이터만 요청하고 응답을 받을 수 있다
+                javaScript의 XMLHttpRequest객체를 이용
+        */
+    </script>
+    <input type="button" id="btn1" value="텍스트 요청" />
+    <div id="area1"></div>
+    <script>
+      document.getElementById("btn1").addEventListener("click", () => {
+        let xhr = new XMLHttpRequest(); //XMLHttpRequest객체 생성 : 서버와 비동기 통신이 가능한 객체
+        xhr.open("get", "data.txt", true);
+        /*
+        open : 요청 정보 설정 
+            1)get HTTP Method(get/post) 
+            2)data.txt : url . http://127.0.0.1:5500/JavaScript/data.txt
+            3) true : 비동기 통신
+        */
+        xhr.send(); //서버로 요청
+        xhr.addEventListener("readystatechange", () => {
+          /*
+            readystatechange : xhr 객체의 상태가 변경될 때 발생되는 이벤트
+                xhr.readyState : xhr 객체의 상태 정보
+                    -0 : 객체 생성
+                    -1 : open
+                    -2 : send. 서버로부터 응답이 없는 경우
+                    -3 : 응답이 오는 중
+                    -4 : 응답 완료
+                xhr.status 
+                    -200 : 정상 완료
+                    -4xx : 요청 실패
+                    -5xx : 응답 실패
+            */
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("area1").textContent = xhr.responseText; //xhr.responseText : 응답 메세지 저장
+          }
+        });
+      });
+    </script>
+
+    <input type="button" id="btn2" value="제품 정보 요청1" />
+    <div id="area2"></div>
+    <script>
+      document.getElementById("btn2").addEventListener("click", () => {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "product1.xml", true);
+        xhr.send();
+        xhr.addEventListener("readystatechange", () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let data = xhr.responseXML;
+            let productList = data.getElementsByTagName("product");
+            let str = '<table border="1">';
+            str +=
+              "<thead><tr><td>모델</td><td>제조사</td><td>가격</td></tr></thead>";
+            str += "<tbody>";
+            for (let i = 0; i < productList.length; i++) {
+              str += "<tr>";
+              str +=
+                "<td>" +
+                productList[i].getElementsByTagName('model')[0].textContent +
+                "</td>";
+              str +=
+                "<td>" +
+                productList[i].getElementsByTagName('maker')[0].textContent +
+                "</td>";
+              str +=
+                "<td>" +
+                productList[i].getElementsByTagName('price')[0].textContent +
+                "</td>";
+              str += "</tr>";
+            }
+            str += "</tbody></table>";
+            document.getElementById("area2").innerHTML = str;
+          }
+        });
+      });
+    </script>
+
+    <input type="button" id="btn3" value="제품 정보 요청2" />
+    <div id="area3"></div>
+    <script>
+      document.getElementById("btn3").addEventListener("click", () => {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "product2.xml", true);
+        xhr.send();
+        xhr.addEventListener("readystatechange", () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let data = xhr.responseXML;
+            let productList = data.getElementsByTagName("product");
+            let str = "<div>;"
+            for(let i=0 ; i<productList.length; i++){
+                str += "<ul>"
+                str += "<li>" + productList[i].getAttribute('model') + "</li>"
+                str += "<li>" + productList[i].getAttribute('maker') + "</li>"
+                str += "<li>" + productList[i].getAttribute('price') + "</li>"
+                str += "</ul>"
+            }
+            str += '</div>';
+            document.getElementById("area3").innerHTML = str;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
