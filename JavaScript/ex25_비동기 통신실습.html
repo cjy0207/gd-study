@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--weather.xml 화면에 출력하기-->
+    <button id="btn">날씨 조회하기</button>
+    <table border="1">
+      <caption id="weather_day"></caption>
+      <tr>
+        <th>지역명</th>
+        <th>날씨</th>
+        <th>온도</th>
+      </tr>
+      <tbody id="weather_body"></tbody>
+    </table>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "weather.xml", true);
+        xhr.send();
+
+        xhr.addEventListener("readystatechange", () => {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            let xml = xhr.responseXML;
+            const locals = xml.getElementsByTagName("local");
+
+            const day = xml.getElementsByTagName("weather")[0];
+
+            const cap =
+              day.getAttribute("year") +
+              "년" +
+              day.getAttribute("month") +
+              "월" +
+              day.getAttribute("day") +
+              "일" +
+              day.getAttribute("hour") +
+              "시";
+
+            document.getElementById("weather_day").innerHTML = cap;
+
+            let html = "";
+            for (let i = 0; i < locals.length; i++) {
+              const local = locals[i];
+              const name = local.textContent;
+              const desc = local.getAttribute("desc");
+              const temp = local.getAttribute("ta");
+
+              html += `
+            <tr>
+              <td>${name}</td>
+              <td>${desc}</td>
+              <td>${temp}</td>
+            </tr>`;
+            }
+
+            document.getElementById("weather_body").innerHTML = html;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

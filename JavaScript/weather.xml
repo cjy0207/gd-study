@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <current xmlns="current">
-  <weather year="2023" month="03" day="08" hour="17">
+  <weather year="2025" month="10" day="24" hour="15">
     <local stn_id="90" icon="04" desc="흐림" ta="17.6">속초</local>
     <local stn_id="93" icon="04" desc="흐림" ta="13.1" rn_hr1="0.0">북춘천</local>
     <local stn_id="95" icon="04" desc="흐림" ta="13.5" rn_hr1="0.0">철원</local>
